@@ -7,13 +7,12 @@
         <script src="../library/backbone-min.js"></script>
         <script src="../library/json2.js"></script>
         <script src="../library/humanize.min.js"></script>
+        <link href="../library/bootstrap/css/bootstrap.css" rel="stylesheet" type='text/css'>
         <script src="code.js"></script>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet'
         type='text/css'>
         <meta charset=utf-8 />
         <title>La Norriture</title>
-        <link rel="stylesheet" href="../library/foundation/stylesheets/foundation.css">
-        <link rel="stylesheet" href="../library/foundation/stylesheets/app.css">
         <!--[if lt IE 9]>
             <link rel="stylesheet" href="stylesheets/ie.css">
         <![endif]-->
@@ -32,7 +31,7 @@
     
     <body>
         <script type="text/html" id="template-menu">
-            <% _.each(meals, function (meal, num) { %> <li> The <% print(Humanize.ordinal(num + 1)) %> plate contains some delicious <span class = "blue radius label"> <%= meal.appetizer %> </span> for starters, following up with some <span class="red radius label"><%= meal.entree %></span>, and then drooling over some <span class = "green radius label"> <%= meal.dessert %> </span>. </li> <%
+            <% _.each(meals, function (meal, num) { %> <li> The <% print(Humanize.ordinal(num + 1)) %> plate contains some delicious <span class = "label label-success"> <%= meal.appetizer %> </span> for starters, following up with some <span class="label label-warning"><%= meal.entree %></span>, and then drooling over some <span class = "label label-info"> <%= meal.dessert %> </span>. </li> <%
             }); %>
         </script>
         <div class="container">
@@ -40,15 +39,18 @@
                 <div class="twelve columns">
                     <div id="header">
                         <h1>Menu</h1>
-                        <input type="text" id="appetizer" class="oversize expand input-text"
+                        <br />
+                        <form class="form-horizontal">
+                        <input class="input-xlarge"  type="text" id="appetizer"
                         placeholder="Enter your appetizer here">
-                        <a href="#" id="add" class="medium blue button">Add meal</a>
+                        <a href="#" id="add" class="btn">Add meal</a>
+                    </form>
                     </div>
                 </div>
             </div>
             <hr />
             <div class="row">
-                <div class="three columns">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet
+                <div class="span3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet
                     nisi et eros iaculis pellentesque ut ac enim. Morbi ut mattis sapien. Nullam
                     blandit hendrerit metus eget porttitor. Nunc ullamcorper ligula eu ligula
                     tristique suscipit. Nulla facilisis ultricies est id consequat. Aliquam
@@ -64,7 +66,7 @@
                     quam in mauris posuere pellentesque. In sed odio vestibulum sem lacinia
                     iaculis.</div>
                 <br />
-                <div class="nine columns">
+                <div class="span9">
                     <div id="meals">
                         <ol></ol>
                     </div>
