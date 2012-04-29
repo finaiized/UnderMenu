@@ -14,7 +14,7 @@ $(document).ready(function () {
     var Menu = Backbone.View.extend({
         el: $('body'),
         events: {
-            'click button#add': 'addMeal'
+            'click a#add': 'addMeal'
         },
         template: _.template($("#template-menu").html()),
         initialize: function () {
