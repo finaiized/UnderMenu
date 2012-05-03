@@ -28,7 +28,8 @@ $(document).ready(function () {
             var html = this.template({
                 meals: this.collection.toJSON()
             });
-            $('ol', this.el).html(html);
+            console.log(this.collection.toJSON());
+            $('#meals').html(html);
 
         },
 
