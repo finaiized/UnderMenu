@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var template = $("#templates .plates").detach();
     var Meal = Backbone.Model.extend({
         defaults: {
             "appetizer": "Caesar Salad",
@@ -16,7 +17,6 @@ $(document).ready(function () {
         events: {
             'click a#add': 'addMeal'
         },
-        template: _.template($("#template-menu").html()),
         initialize: function () {
             _.bindAll(this, 'render', 'addMeal');
             this.collection = new Meals();
@@ -25,12 +25,15 @@ $(document).ready(function () {
             this.render();
         },
         render: function () {
-            var html = this.template({
-                meals: this.collection.toJSON()
-            });
-            console.log(this.collection.toJSON());
-            $('#meals').html(html);
-
+            var i = this.collection.length;
+            var directives = {
+                plateNum: function() {
+                    return "Plate Number #" + ((i).toString());   
+                }
+            };
+            console.log(this.collection.at(this.collection.length - 1).toJSON());
+            template.render(this.collection.at(this.collection.length - 1).toJSON(), directives);
+            $("#meals").append(template.clone());
         },
 
         addMeal: function () {

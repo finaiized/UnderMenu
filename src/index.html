@@ -11,6 +11,7 @@
         type='text/css'>
         <link href="../library/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"
         type='text/css'>
+        <script src="../library/transparency.min.js"></script>
         <script src="code.js"></script>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet'
         type='text/css'>
@@ -29,7 +30,6 @@
             }
             #header {
                 text-align: center;
-
             }
             h4 {
                 border-bottom: 1px solid #09C;
@@ -50,36 +50,17 @@
     
     <body>
         <script type="text/html" id="template-menu">
-        <% _.each(meals, function (meal, num) { %>
-            <h4>
-                        <span>Plate #<%= num + 1 %></span>
-                    </h4>
-                    <ul class="thumbnails">
-                        <li class="span4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/300/2E8B57/FFFFFF"
-                                alt="">
-                                <h5><%= meal.appetizer %></h5>
-                                <p>Deliciously fresh, crunchy, and saucy.</p>
-                            </div>
-                        </li>
-                        <li class="span4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/300/2E8B57/FFFFFF"
-                                alt="">
-                                <h5><%= meal.entree %></h5>
-                                <p>Perfectly breaded, overflowing with cheese.</p>
-                            </div>
-                        </li>
-                        <li class="span4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/300/2E8B57/FFFFFF"
-                                alt="">
-                                <h5><%= meal.dessert %></h5>
-                                <p>Perfectly soft dough topped with a strawberry for two.</p>
-                            </div>
-                        </li>
-                    </ul>
+            <% _.each(meals, function (meal, num) { %> < h4 > < span > Plate# <%= num + 1 %> < /span>
+                    </h4 > < ul class = "thumbnails" > < li class = "span4" > < div class = "thumbnail" > < img src = "http://placehold.it/300/2E8B57/FFFFFF"
+                alt = "" > < h5 > <%= meal.appetizer %> < /h5>
+                                <p>Deliciously fresh, crunchy, and saucy.</p > < /div>
+                        </li > < li class = "span4" > < div class = "thumbnail" > < img src = "http://placehold.it/300/2E8B57/FFFFFF"
+                alt = "" > < h5 > <%= meal.entree %> < /h5>
+                                <p>Perfectly breaded, overflowing with cheese.</p > < /div>
+                        </li > < li class = "span4" > < div class = "thumbnail" > < img src = "http://placehold.it/300/2E8B57/FFFFFF"
+                alt = "" > < h5 > <%= meal.dessert %> < /h5>
+                                <p>Perfectly soft dough topped with a strawberry for two.</p > < /div>
+                        </li > < /ul>
                     <% }); %>
         </script>
         <div class="container">
@@ -97,18 +78,53 @@
             </div>
             <hr />
             <div class="row-fluid">
-            <div class='hidden-phone'>
-                <div class="span3">
-                    <image src="http://placehold.it/200x500&text=ADS"></img>
-                </div>
-            </div>
-                <br />
-
-                <div class="span9">
-                    <div id="meals">
+                <div class='hidden-phone'>
+                    <div class="span3">
+                        <image src="http://placehold.it/200x500&text=ADS"></image>
                     </div>
                 </div>
+                <br />
+                <div class="span9">
+                    <div id="meals"></div>
+                </div>
             </div>
+        </div>
+        <div id="templates">
+            <div class="plates">
+                <h4>
+                    <span id="plateNum"></span>
+                </h4>
+                <ul class="thumbnails">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/300/2E8B57/FFFFFF" alt="">
+                            <h5>
+                                <span id="appetizer"></span>
+                            </h5>
+                            <p>Deliciously fresh, crunchy, and saucy.</p>
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/300/2E8B57/FFFFFF" alt="">
+                            <h5>
+                                <span id="entree"></span>
+                            </h5>
+                            <p>Perfectly breaded, overflowing with cheese.</p>
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/300/2E8B57/FFFFFF" alt="">
+                            <h5>
+                                <span id="dessert"></span>
+                            </h5>
+                            <p>Perfectly soft dough topped with a strawberry for two.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </body>
 
 </html>
