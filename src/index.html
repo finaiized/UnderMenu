@@ -49,20 +49,6 @@
     </head>
     
     <body>
-        <script type="text/html" id="template-menu">
-            <% _.each(meals, function (meal, num) { %> < h4 > < span > Plate# <%= num + 1 %> < /span>
-                    </h4 > < ul class = "thumbnails" > < li class = "span4" > < div class = "thumbnail" > < img src = "http://placehold.it/300/2E8B57/FFFFFF"
-                alt = "" > < h5 > <%= meal.appetizer %> < /h5>
-                                <p>Deliciously fresh, crunchy, and saucy.</p > < /div>
-                        </li > < li class = "span4" > < div class = "thumbnail" > < img src = "http://placehold.it/300/2E8B57/FFFFFF"
-                alt = "" > < h5 > <%= meal.entree %> < /h5>
-                                <p>Perfectly breaded, overflowing with cheese.</p > < /div>
-                        </li > < li class = "span4" > < div class = "thumbnail" > < img src = "http://placehold.it/300/2E8B57/FFFFFF"
-                alt = "" > < h5 > <%= meal.dessert %> < /h5>
-                                <p>Perfectly soft dough topped with a strawberry for two.</p > < /div>
-                        </li > < /ul>
-                    <% }); %>
-        </script>
         <div class="container">
             <div class="row-fluid">
                 <div class="twelve columns">
